@@ -3,6 +3,8 @@ _lstSo1 = [5,8,0,-11,9,6,23,15,56,11,90,0,5,23]
 # Không được gán trực tiếp List như trên vì List sẽ gán vùng nhớ đã được cấp không phải gán giá trị
 # Nếu muốn gán thì dùng lệnh copy()
 _lstSo2 = _lstSo1.copy()
+# print("vùng nhớ list 1", id(_lstSo1))
+# print("vùng nhớ list 2", id(_lstSo2))
 print("List 1: ",_lstSo1)
 print("List 2: ",_lstSo2)
 ###### Xóa phần tử trong list có 3 cách
