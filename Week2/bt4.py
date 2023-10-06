@@ -8,6 +8,6 @@ while True:
             _ketqua += i*i 
             # _ketqua += i**2
             print(_ketqua)
-        break #break này thuộc về WHILE trên nên thụt dòng bằng FOR
+        break #break này thuộc về WHILE IF trên nên thụt dòng bằng FOR
     else:
         print("vui lòng nhập một số y>x & kết quả =",_ketqua)

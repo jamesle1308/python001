@@ -12,8 +12,6 @@ while _soLuot>0:
     _nhapSo = int(input("Nhập số từ 0-99 ở đây:"))
     if 0<=_nhapSo<=99:
         _lstSo.append(_nhapSo)
-    else:
-        continue
     _soLuot-=1
     print("Danh sách các số bạn chọn là",_lstSo)
 print("Con số may mắn lần này là",_luckyNumber)
