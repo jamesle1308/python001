@@ -36,7 +36,7 @@ while True:
         _tuTiengAnh = input("Nhập từ tiếng anh cần sửa nghĩa")
         if _tuTiengAnh not in tu_dien:
             _nghia=input("Nhập các nghĩa khác nhau bởi dấu phẫy")
-            
+            tu_dien[_tuTiengAnh]=_nghia.split(",") #chuyển input str thành List để phù hợp, nếu ko thêm thì toàn dấu phẩy do string thôi
         else:
             print("Từ tiếng Anh này đã tồn tại, vui lòng cập nhật lại bằng tác vụ 2")
     elif _tacvu =="4":
