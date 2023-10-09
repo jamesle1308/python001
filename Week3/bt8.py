@@ -16,6 +16,24 @@ def _xemGoiCuoc(_duLieu):
     for k,v in _duLieu.items():
         print("{:10}{:10}{:10}{:10}".format(k,v[0],v[1],v[2]))
 
+def _themGoiCuoc(_goiCuocMoi):
+    if _goiCuocMoi.upper() not in goi_cuoc:
+        _gia, _dl, _th = eval(input("Nhập thông tin gói cước mới vào đây"))
+        goi_cuoc[_goiCuocMoi]=[_gia,_dl,_th]
+        print("Đã thêm gói cước mới thành công")
+
+def _capNhatGoi(_goiCuoc):
+    if _goiCuoc.upper() in goi_cuoc:
+            _gia, _dl, _th = eval(input("Nhập thông tin cập nhật lại gói cước vào đây "))
+            goi_cuoc[_goiCuoc]=[_gia,_dl,_th]
+            print("Đã thêm gói cước mới thành công")
+    else:
+        print("Gói cước ko tồn tài, sử dụng tác vụ 2 để thêm gói mới")
+
+def _tinhdlngay(_duLieu):
+    print("{:10}{:10}".format("Mã Gói","DL ngày"))
+    for k,v in _duLieu.items():
+        print("{:10}{:10}".format(k,v[1]/v[2]))
 ############ Chương trình chính ##############
 goi_cuoc={'D3':[15000,3,3],'DT30':[30000,7,7],'M50':[50000,1.2,30]}
 while True:
@@ -28,11 +46,16 @@ while True:
     if _tacvu =="1":
         _xemGoiCuoc(goi_cuoc)
     elif _tacvu =="2":
-        pass
+        # pass
+        _goiCuoc = input("Nhập tên gói cước mới")
+        _themGoiCuoc(_goiCuoc)
     elif _tacvu =="3":
-        pass
+        # pass
+        _goiCuocCheck = input("Nhập gói cước cần cập nhật ")
+        _capNhatGoi(_goiCuocCheck)
     elif _tacvu =="4":
-        pass
+        # pass
+        _tinhdlngay(goi_cuoc)
     else:
         print("Thoát khỏi chương trình")
         break
