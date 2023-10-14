@@ -11,11 +11,14 @@ while True:
         _noidung = read_file(_path)
         print(_noidung)
     elif _tacvu =="2":
-        pass
+        # pass
+        write_file(_path)
     elif _tacvu =="3":
-        pass
-    elif _tacvu =="4":
-        pass
+        # pass
+        _numRow, _numWord, _numChar = thong_ke(_path)
+        print("Số dòng ",_numRow)
+        print("Số Từ ",_numWord)
+        print("Số kí từ ",_numChar)
     else:
         print("Thoát khỏi chương trình")
         break
