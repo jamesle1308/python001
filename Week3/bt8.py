@@ -21,12 +21,33 @@ def _themGoiCuoc(_goiCuocMoi):
         _gia, _dl, _th = eval(input("Nhập thông tin gói cước mới vào đây"))
         goi_cuoc[_goiCuocMoi]=[_gia,_dl,_th]
         print("Đã thêm gói cước mới thành công")
+    else:
+        print("Gói cước đã tồn tại, vùi lòng cập nhật gói cước bằng tác vụ số 3")
 
-def _capNhatGoi(_goiCuoc):
-    if _goiCuoc.upper() in goi_cuoc:
-            _gia, _dl, _th = eval(input("Nhập thông tin cập nhật lại gói cước vào đây "))
-            goi_cuoc[_goiCuoc]=[_gia,_dl,_th]
-            print("Đã thêm gói cước mới thành công")
+def _capNhatGoi(goi_cuoc):
+    # if _goiCuoc.upper() in goi_cuoc:
+    #         _gia, _dl, _th = eval(input("Nhập thông tin cập nhật lại gói cước vào đây "))
+    #         goi_cuoc[_goiCuoc]=[_gia,_dl,_th]
+    #         print("Đã thêm gói cước mới thành công")
+    _goiCuoc = input("Nhập tên gói cước cần cập nhật")
+    print(_goiCuoc.upper())
+    if _goiCuoc.upper() in goi_cuoc: #dict ko có chức năng upper nha bạn ơi
+            _chiTietGoi = goi_cuoc[_goiCuoc]
+            print(_chiTietGoi)
+            _gia = _chiTietGoi[0]
+            _dl = _chiTietGoi[1]
+            _th = _chiTietGoi[2]
+            _giaUpdate = input("Nhập y nếu muốn cập nhật giá mới")
+            if _giaUpdate.upper() == "Y":
+                _gia = input("Nhập giá mới vào đây")
+            _dlUpdate = input("Nhập y nếu muốn cập nhật giá mới")
+            if _dlUpdate.upper() == "Y":
+                _dl = input("Nhập giá mới vào đây")
+            _thUpdate = input("Nhập y nếu muốn cập nhật giá mới")    
+            if _thUpdate.upper() == "Y":
+                _th = input("Nhập giá mới vào đây")
+            goi_cuoc[_goiCuoc] = [int(_gia),_dl,_th]
+            print("Cập nhật thành công")
     else:
         print("Gói cước ko tồn tài, sử dụng tác vụ 2 để thêm gói mới")
 
@@ -51,8 +72,8 @@ while True:
         _themGoiCuoc(_goiCuoc)
     elif _tacvu =="3":
         # pass
-        _goiCuocCheck = input("Nhập gói cước cần cập nhật ")
-        _capNhatGoi(_goiCuocCheck)
+        # _goiCuocCheck = input("Nhập gói cước cần cập nhật ") ---- # này là string không phải Key in dictionary - nên truyên vào function là một string ko phải dict
+        _capNhatGoi(goi_cuoc)
     elif _tacvu =="4":
         # pass
         _tinhdlngay(goi_cuoc)
