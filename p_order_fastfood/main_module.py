@@ -22,6 +22,7 @@ while True:
         _thongke = thong_ke(_noidung)
         print(_thongke)
         #giống bài tính điểm trung bình project4
+        #tạo 1 set trước để loại bỏ trùng rồi dò trong set dùng vòng lặp cộng lại
     else:
         print("Thoát khỏi chương trình")
         break
