@@ -53,13 +53,14 @@ def new_order(_orders):
             break
     return _newOrder #ngang cấp vs while để ko break vòng lặp khi muốn đặt nhiều món trong 1 order
 
-def thong_ke(_content):
-    _content.pop(0)
-    _tempList = []
-    for _row in _content:
-        _madonhang = _row[0]
-        _soluong += _row[2]
-        _giatien += _row[5]
-        _collect=[_madonhang,_soluong,_giatien]    
-        _tempList.append(_collect)
-    return _tempList
+def thong_ke(_tempSet,_content):
+    _sl=0
+    _thanhtien = 0
+    for _r1 in _content:
+        if _r1[0] == _tempSet:
+            _madon = _r1[0]
+            _sl += float(_r1[2])
+            _thanhtien += float(_r1[5])
+    print("{:20}|{:20}|{:20}".format(_madon,_sl,_thanhtien))
+    return
+
