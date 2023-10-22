@@ -26,10 +26,13 @@ def update_new(_content):
             _fName = _row[4]
             _rqUpdatepass = input("Nhấn Y nếu muốn cập nhật pass mới: ")
             if _rqUpdatepass == "y":
-                _passWord = input("Nhập mật khẩu mới: ")
                 while True:
-                    if len(_passWord) >= 8:
+                    _passWord = input("Nhập mật khẩu mới: ")
+                    if len(_passWord) >= 8 and _pass !=_passWord:
                         break
+                    else:
+                        print(_pass,_passWord)
+                        print("Nhập ko đúng 8 ký tự hoặc trùng với pass cũ")
             _pass = _passWord
             _row[0] = _stt
             _row[1] = _userN
@@ -38,6 +41,7 @@ def update_new(_content):
             _row[4] = _fName
             _row[5] = datetime.now()
             print("Update thành công")
+            break
     else:
         print("Đăng nhập không thành công")            
     return _content

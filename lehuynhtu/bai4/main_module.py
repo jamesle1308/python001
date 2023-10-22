@@ -22,7 +22,9 @@ while True:
         for i in _noidung:
             _setMaMon.add(i[1])
         print(_setMaMon)
-        tinh_dtb(_setMaMon,_noidung)
+        print("{:10}|{:10}|{:10}".format("Mã MH","SL","ĐTB"))
+        for _maMH in _setMaMon:
+            tinh_dtb(_maMH,_noidung)
     else:
         print("Thoát khỏi chương trình")
         break
