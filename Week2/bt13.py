@@ -13,3 +13,4 @@ print(_list2)
 # Thay thế phần tử không thỏa điều kiện
 _list3=[x if x>0 else 0 for x in or_lst]
 print(_list3)
+#note test
